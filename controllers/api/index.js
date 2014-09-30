@@ -1,4 +1,5 @@
 var express = require('express');
+var mongodb = require('mongodb');
 var router = module.exports = express.Router();
 
 router.get('/api', function (req, res) {
@@ -52,7 +53,7 @@ router.get('/api/parks/name/near/:name', function (req, res) {
     var lon = parseFloat(req.query.lon);
     var name = req.params.name;
 
-    self.db.collection('parkpoints').find({
+    req.db.collection('parkpoints').find({
         "Name": {
             $regex: name,
             $options: 'i'

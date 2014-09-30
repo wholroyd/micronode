@@ -1,6 +1,6 @@
-/*var express = require('express');
+var express = require('express');
 var router = module.exports = express.Router();
 
 router.get('/', function (req, res) {
-    res.send('1');
-});*/
+    res.send('You have reached /');
+});
